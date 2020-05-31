@@ -17,6 +17,7 @@ El escenario es el conjunto de elementos necesarios para la realización de la p
 En este repositorio disponemos de los escenarios:
 
 - **config_usuarios**: creación de un container para ejecutar las prácticas de gestión de usuarios locales
+- **config_acls**: creación de un container para ejecutar las prácticas de gestión de ACLs
 
 ### Creación del escenario de la práctica
 
