@@ -1,0 +1,6 @@
+version: '3'
+services:
+#Service sa toma el Dockerfile de ./acls
+ acls:
+  build: ./acls
+  hostname: config_acls
