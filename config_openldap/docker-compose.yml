@@ -1,0 +1,16 @@
+version: '3'
+services:
+#Service sa toma el Dockerfile de ./openldap
+ openldap:
+  build: ./openldap
+  hostname: openldap
+  networks:
+   openldap:
+    ipv4_address: 10.121.157.100
+
+networks:
+  openldap:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 10.121.157.0/24

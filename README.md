@@ -18,6 +18,7 @@ En este repositorio disponemos de los escenarios:
 
 - **config_usuarios**: creación de un container para ejecutar las prácticas de gestión de usuarios locales
 - **config_acls**: creación de un container para ejecutar las prácticas de gestión de ACLs
+- **config_openldap**: creación de un container para ejecutar las prácticas de OpenLDAP
 
 ### Creación del escenario de la práctica
 
