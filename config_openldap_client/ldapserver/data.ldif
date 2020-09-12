@@ -1,0 +1,50 @@
+dn: dc=test,dc=local
+objectClass: top
+objectClass: dcObject
+objectClass: organization
+o: test
+dc: test
+structuralObjectClass: organization
+entryUUID: 98fac8da-3e00-103a-9528-55437a07b2a8
+creatorsName: cn=admin,dc=test,dc=local
+createTimestamp: 20200608182121Z
+entryCSN: 20200608182121.171178Z#000000#000#000000
+modifiersName: cn=admin,dc=test,dc=local
+modifyTimestamp: 20200608182121Z
+
+dn: cn=admin,dc=test,dc=local
+objectClass: simpleSecurityObject
+objectClass: organizationalRole
+cn: admin
+description: LDAP administrator
+userPassword:: e1NTSEF9bERRYjdINUFsRWU4NnpTbFEwMmVnTWNYTVVTSWljVDg=
+structuralObjectClass: organizationalRole
+entryUUID: 98fb52a0-3e00-103a-9529-55437a07b2a8
+creatorsName: cn=admin,dc=test,dc=local
+createTimestamp: 20200608182121Z
+entryCSN: 20200608182121.174751Z#000000#000#000000
+modifiersName: cn=admin,dc=test,dc=local
+modifyTimestamp: 20200608182121Z
+
+dn: ou=users,dc=test,dc=local
+objectClass: organizationalUnit
+structuralObjectClass: organizationalUnit
+ou: users
+entryUUID: 7d1913e4-4295-103a-85dd-1be56398763d
+creatorsName: cn=admin,dc=test,dc=local
+createTimestamp: 20200614141714Z
+entryCSN: 20200614141714.057368Z#000000#000#000000
+modifiersName: cn=admin,dc=test,dc=local
+modifyTimestamp: 20200614141714Z
+
+dn: ou=groups,dc=test,dc=local
+objectClass: organizationalUnit
+structuralObjectClass: organizationalUnit
+ou: groups
+entryUUID: 906f21a4-4295-103a-85de-1be56398763d
+creatorsName: cn=admin,dc=test,dc=local
+createTimestamp: 20200614141746Z
+entryCSN: 20200614141746.498055Z#000000#000#000000
+modifiersName: cn=admin,dc=test,dc=local
+modifyTimestamp: 20200614141746Z
+
