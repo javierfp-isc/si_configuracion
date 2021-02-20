@@ -4,3 +4,5 @@ services:
  acls:
   build: ./acls
   hostname: config_acls
+  ports:
+  - "80:80"
