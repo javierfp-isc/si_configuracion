@@ -1,0 +1,11 @@
+version: '3'
+services:
+#Service sa toma el Dockerfile de ./systemd
+ systemd:
+  build: ./systemd
+  hostname: config_systemd
+  privileged: true
+  volumes:
+    - /sys/fs/cgroup:/sys/fs/cgroup:ro    
+  ports:
+  - "80:80"
