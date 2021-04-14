@@ -1,12 +1,25 @@
 version: '3'
 services:
-#Service sa toma el Dockerfile de ./openldap
+#Service openldap toma el Dockerfile de ./openldap
  openldap:
   build: ./openldap
   hostname: openldap
+  ports:
+  - "10000:10000"
   networks:
    openldap:
     ipv4_address: 10.121.157.100
+
+ cliente:
+  build: ./cliente
+  hostname: cliente
+  privileged: true  
+  ports:
+  - "3389:3389"
+  volumes:
+    - /sys/fs/cgroup:/sys/fs/cgroup:ro 
+  networks:
+   openldap:
 
 networks:
   openldap:

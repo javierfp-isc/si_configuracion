@@ -1,24 +1,17 @@
-FROM debian:buster
+FROM jrei/systemd-debian:10
 
-MAINTAINER javierfp <javierfp@iessanclemente.net>
+LABEL MAINTAINER=javierfp@iessanclemente.net
 
 ENV TERM xterm
 ENV PASS=abc123.
 ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/sbin
 
 LABEL distribucion="Debian 10"
-LABEL descripcion="Imagen Debian para cliente de OpenLDAP"
-LABEL paquetes="vim, iputils-ping, wget, nano"
+LABEL descripcion="Imagen Debian para prácticas de OpenLDAP"
 LABEL acceso="usuario: root, password: abc123."
 
 #Copiamos el entrypoint.sh al container
 COPY entrypoint.sh /usr/bin/entrypoint.sh
-
-#Copiamos el nsswitch.conf al container
-COPY nsswitch.conf /etc/nsswitch.conf
-
-#Copiamos el common-session al container
-COPY common-session /etc/pam.d/common-session
 
 #Damos permiso al entrypoint y al script
 RUN set -x; \
@@ -30,11 +23,7 @@ RUN set -x; \
 
 #Instalamos paquetes de utilidades
 RUN set -x; \
-	apt update && apt install -y vim wget iputils-ping nano
-
-#Instalamos paquetes cliente openldap
-#RUN set -x; \
-#	apt install -y libnss-ldap libpam-ldap
+	apt update && apt install -y vim iputils-ping nano dialog tasksel
 
 #Limpiando
 RUN set -x; \
