@@ -3,6 +3,9 @@
 #Arranca slapd
 [ -f /usr/sbin/slapd ] && /usr/sbin/slapd
 
+#Arranca ssh
+service ssh start
+
 #Arranca webmin
 [ -f /etc/init.d/webmin ] && /etc/init.d/webmin start
 

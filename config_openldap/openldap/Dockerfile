@@ -1,6 +1,6 @@
 FROM debian:buster
 
-MAINTAINER javierfp <javierfp@iessanclemente.net>
+LABEL MAINTAINER=javierfp@iessanclemente.net
 
 ENV TERM xterm
 ENV PASS=abc123.
@@ -8,7 +8,6 @@ ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/sbin
 
 LABEL distribucion="Debian 10"
 LABEL descripcion="Imagen Debian para prácticas de openldap"
-LABEL paquetes="vim, iputils-ping, wget, nano"
 LABEL acceso="usuario: root, password: abc123."
 
 #Copiamos el entrypoint.sh al container
@@ -24,7 +23,7 @@ RUN set -x; \
 
 #Instalamos paquetes de utilidades
 RUN set -x; \
-	apt update && apt install -y vim wget iputils-ping nano
+	apt update && apt install -y vim wget iputils-ping nano openssh-server
 
 #Comandos necesarios para poder instalar webmin
 RUN set -x; \
@@ -33,6 +32,11 @@ RUN set -x; \
 	rm /var/lib/apt/lists/*lz4 && \
 	apt-get -o Acquire::GzipIndexes=false update && \
 	apt-get install -y apt-show-versions
+
+#Comandos necesarios para permitir login root ssh
+RUN set -x; \
+	echo "PermitRootLogin yes" >> /etc/ssh/sshd_config && \
+	echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
 
 #Limpiando
 RUN set -x; \

@@ -1,4 +1,4 @@
-FROM jrei/systemd-debian:10
+FROM debian:buster
 
 LABEL MAINTAINER=javierfp@iessanclemente.net
 
@@ -23,17 +23,7 @@ RUN set -x; \
 
 #Instalamos paquetes de utilidades
 RUN set -x; \
-	apt update && apt install -y vim iputils-ping nano dialog tasksel
-
-#Instalamos paquetes de cliente openldap
-RUN set -x; \
-	apt install -y nscd libpam-ldap libnss-ldap ldap-utils
-
-#Copiamos archivos de conf openldap client
-COPY pam_ldap.conf /etc/pam_ldap.conf
-COPY pam_ldap.secret /etc/pam_ldap.secret
-COPY libnss-ldap.conf /etc/libnss-ldap.conf
-COPY libnss-ldap.secret /etc/libnss-ldap.secret
+	apt update && apt install -y vim iputils-ping nano dialog tasksel ssh
 
 #Limpiando
 RUN set -x; \
