@@ -23,7 +23,7 @@ RUN set -x; \
 
 #Instalamos paquetes de utilidades
 RUN set -x; \
-	apt update && apt install -y vim iputils-ping nano pcregrep procps
+	apt update && apt install -y vim iputils-ping nano pcregrep procps wget
 
 #Limpiando
 RUN set -x; \
