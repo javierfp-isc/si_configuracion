@@ -13,7 +13,8 @@ services:
  cliente:
   build: ./cliente
   hostname: cliente
-  privileged: true  
+  cap_add:
+  - ALL  
   ports:
   - "3389:3389"
   volumes:

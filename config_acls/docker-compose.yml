@@ -4,6 +4,7 @@ services:
  acls:
   build: ./acls
   hostname: config_acls
-  privileged: true
+  cap_add:
+  - ALL
   ports:
   - "80:80"

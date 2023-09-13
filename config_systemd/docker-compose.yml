@@ -4,7 +4,8 @@ services:
  systemd:
   build: ./systemd
   hostname: config_systemd
-  privileged: true
+  cap_add:
+  - ALL
   volumes:
     - /sys/fs/cgroup:/sys/fs/cgroup:ro    
   ports:

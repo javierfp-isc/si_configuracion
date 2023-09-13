@@ -13,14 +13,16 @@ services:
  servidor:
   build: ./servidor
   hostname: servidor
-  privileged: true  
+  cap_add:
+  - ALL  
   networks:
    openldap:
 
  cliente:
   build: ./cliente
   hostname: cliente
-  privileged: true  
+  cap_add:
+  - ALL  
   networks:
    openldap:
 
